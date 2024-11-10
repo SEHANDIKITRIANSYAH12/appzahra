@@ -2,6 +2,16 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TractorController;
+use App\Http\Controllers\CostController;
+use App\Http\Controllers\ReportController;
+
+
+
+
+
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -15,8 +25,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return Auth::check() ? redirect()->route('home') : redirect()->route('login');
 });
+
+
+Route::resource('tractors', TractorController::class);
+Route::resource('costs', CostController::class);
+
+Route::get('/reports', [ReportController::class, 'index'])->name('reports.index');
+Route::get('/reports/export-pdf', [ReportController::class, 'exportPdf'])->name('reports.exportPdf');
+Route::get('/reports/export-excel', [ReportController::class, 'exportExcel'])->name('reports.exportExcel');
+
 
 Auth::routes();
 

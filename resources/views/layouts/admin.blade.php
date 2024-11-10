@@ -31,11 +31,12 @@
 
         <!-- Sidebar - Brand -->
         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ url('/home') }}">
-            <div class="sidebar-brand-icon rotate-n-15">
-                <i class="fas fa-laugh-wink"></i>
-            </div>
-            <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
-        </a>
+    <div class="sidebar-brand-icon">
+        <!-- Ikon Traktor Font Awesome -->
+        <i class="fas fa-tractor"></i>
+    </div>
+    <div class="sidebar-brand-text mx-3">UPJA Manage <sup></sup></div>
+</a>
 
         <!-- Divider -->
         <hr class="sidebar-divider my-0">
@@ -70,6 +71,29 @@
                 <span>{{ __('About') }}</span>
             </a>
         </li>
+
+                    <!-- Manajemen Traktor Menu -->
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('tractors.index') }}">
+                    <i class="fas fa-fw fa-truck"></i>
+                    <span>Traktor</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('costs.index') }}">
+                    <i class="fas fa-fw fa-truck"></i>
+                    <span> Biaya</span>
+                </a>
+            </li>
+
+                        <li class="nav-item">
+                <a class="nav-link" href="{{ route('reports.index') }}">
+                    <i class="fas fa-fw fa-file-alt"></i>
+                    <span>Laporan</span>
+                </a>
+            </li>
+
 
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block">
@@ -250,14 +274,6 @@
                                 <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                 {{ __('Profile') }}
                             </a>
-                            <a class="dropdown-item" href="javascript:void(0)">
-                                <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                {{ __('Settings') }}
-                            </a>
-                            <a class="dropdown-item" href="javascript:void(0)">
-                                <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                {{ __('Activity Log') }}
-                            </a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -286,7 +302,7 @@
         <footer class="sticky-footer bg-white">
             <div class="container my-auto">
                 <div class="copyright text-center my-auto">
-                    <span>Maintained by <a href="https://github.com/aleckrh" target="_blank">AleckRH</a>. {{ now()->year }}</span>
+                    <span>Maintained by <a href="https://github.com/aleckrh" target="_blank"></a>. {{ now()->year }}</span>
                 </div>
             </div>
         </footer>
